@@ -529,7 +529,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>&copy; 2026 PurrVerse AI. All rights reserved. Crafted for Royal Felines & Intelligent Parents.</p>
           <div className="flex items-center gap-4">
-            <button onClick={() => setActiveTab("pricing")} className="hover:text-brand-gold transition cursor-pointer">Subscription SaaS</button>
+            <button onClick={() => setActiveTab("pricing")} className="hover:text-brand-gold transition cursor-pointer">Made in India | Owner: Ayush Chatterjee</button>
             <span>&bull;</span>
             <span className="text-[10px] uppercase font-mono tracking-widest text-brand-gold font-semibold">INTELLIGENT HEALTH REVOLUTION</span>
           </div>
