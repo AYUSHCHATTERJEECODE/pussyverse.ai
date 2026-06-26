@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PurrVerse AI</title>
+    <script>
+      // Gracefully capture and suppress benign Vite HMR / WebSocket connection errors
+      window.addEventListener('unhandledrejection', function (event) {
+        const msg = event.reason ? (event.reason.message || String(event.reason)) : '';
+        if (
+          msg.includes('WebSocket') || 
+          msg.includes('websocket') || 
+          msg.includes('vite') || 
+          msg.includes('connection')
+        ) {
+          event.preventDefault();
+          console.warn('Suppressed benign HMR WebSocket unhandled rejection:', msg);
+        }
+      });
+
+      window.addEventListener('error', function (event) {
+        const msg = event.message || '';
+        const filename = event.filename || '';
+        if (
+          msg.includes('WebSocket') || 
+          msg.includes('websocket') || 
+          msg.includes('vite') ||
+          filename.includes('vite')
+        ) {
+          event.preventDefault();
+          console.warn('Suppressed benign HMR WebSocket error:', msg);
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

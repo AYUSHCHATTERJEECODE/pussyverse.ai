@@ -1,0 +1,6 @@
+{
+  "name": "PurrVerse AI",
+  "description": "Premium AI-powered Cat Care Ecosystem combining health tracking, daily care, veterinary assistance, global community, e-commerce marketplace, and a personalized virtual AI Cat Companion.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

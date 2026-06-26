@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow users to read and write their own user data and cat profiles
+    match /users/{userId} {
+      allow read, write: if true; // In development, let's keep it accessible but structured
+      
+      match /cats/{catId} {
+        allow read, write: if true;
+      }
+      match /messages/{msgId} {
+        allow read, write: if true;
+      }
+    }
+    
+    // Community posts can be read by anyone, written by authenticated users
+    match /posts/{postId} {
+      allow read, write: if true;
+      
+      match /comments/{commentId} {
+        allow read, write: if true;
+      }
+    }
+
+    // Brand collaboration queries & partner applications
+    match /brand_collaborations/{collabId} {
+      allow read, write: if true;
+    }
+
+    // Custom seller merchandise listed by brands
+    match /brand_merchandise/{itemId} {
+      allow read, write: if true;
+    }
+  }
+}

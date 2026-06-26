@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-matte: #0F0F0F;
+  --color-brand-warm: #F8F7F5;
+  --color-brand-gold: #D4AF37;
+  --color-brand-emerald: #1E8E5A;
+  
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Apply luxury Clean Minimalism background, spacing, and font choices to the whole document */
+body {
+  background-color: #0F0F0F;
+  color: #F8F7F5;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(214, 175, 55, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(30, 142, 90, 0.02) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0F0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(248, 247, 245, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 15, 15, 0.08);
+}
+
+/* Globally convert gray borders inside the app to high-end minimalist low-opacity gold lines */
+.border-neutral-900, 
+.border-neutral-850, 
+.border-neutral-800 {
+  border-color: rgba(214, 175, 55, 0.08) !important;
+}
+
+.border-b-neutral-900,
+.border-b-neutral-850,
+.border-b-neutral-800 {
+  border-bottom-color: rgba(214, 175, 55, 0.08) !important;
+}
+
+.border-t-neutral-900,
+.border-t-neutral-850,
+.border-t-neutral-800 {
+  border-top-color: rgba(214, 175, 55, 0.08) !important;
+}
+
+.border-l-neutral-900,
+.border-l-neutral-850,
+.border-l-neutral-800 {
+  border-left-color: rgba(214, 175, 55, 0.08) !important;
+}
+
+.border-r-neutral-900,
+.border-r-neutral-850,
+.border-r-neutral-800 {
+  border-right-color: rgba(214, 175, 55, 0.08) !important;
+}
+
+/* Clean transition and subtle glow when hovering border-brand-gold items */
+.hover\:border-brand-gold\/30:hover {
+  border-color: rgba(214, 175, 55, 0.25) !important;
+  box-shadow: 0 0 15px rgba(214, 175, 55, 0.04);
+}
+.hover\:border-brand-gold:hover {
+  border-color: rgba(214, 175, 55, 0.6) !important;
+  box-shadow: 0 0 20px rgba(214, 175, 55, 0.08);
+}
+
